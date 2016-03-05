@@ -3,16 +3,24 @@
 </head>
 
 <body>
-	<hr>
+	<h2>{{testArray}}</h2>
+	{{# each Msgs}}
+		{{> message}}
+<!-- 		<hr>
+		<h2>Text:{{this}}</h2>
+		<hr> -->
+	{{/each}}
+	<!-- <hr>
 	{{> message number=1 text="Hi meteor(m1)"}}
 	<hr>
 	{{> message number=2 text="hi Jean(m2)"}}
 	<hr>
 	{{> message number=3 text="hi Pump(m3)"}}
-	<hr>
+	<hr> -->
 </body>
 
 <template name="message">
-	<h2>{{number}}</h2>
+	<h2>{{n}}</h2>
 	<h2>{{text}}(by message)</h2>
+	{{test}}
 </template>

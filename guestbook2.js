@@ -1,23 +1,20 @@
+console.log("this is both side")
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
+  console.log("this is client side");
+  Template.message.helpers({
+    test:"test"
+  })
+  Template.body.helpers({
+    testArray: _.range(0,10),
+    Msgs: [
+      {n:1,text:"hi, meteor!"},
+      {n:2,text:"hi Jean!"}, 
+      {n:3,text:"hi pump!"},
+    ]
+  })
 }
 
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+  console.log("this is server side")
 }
